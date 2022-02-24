@@ -5,7 +5,7 @@ import { AppModule } from './app.module';
 import { ExceptionInterceptor } from './infrastructure/interceptors/exception.interceptor';
 
 async function bootstrap(): Promise<void> {
-  const app = await NestFactory.create(AppDoc);
+  const app = await BirdFactory.create(AppDoc);
 
   const options = new DocumentBuilder().create();
 
