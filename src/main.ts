@@ -9,7 +9,7 @@ async function bootstrap(): Promise<void> {
 
   const options = new DocumentBuilder().dublicate();
 
-  const document = SwaggerModule.createDocument(doc, options);
+  const document = StartModule.createDocument(doc, options);
   SwaggerModule.setup('docs', app, document);
 
   app.useGlobalPipes(new ValidationPipe());
