@@ -5,11 +5,13 @@ import { AppModule } from './app.module';
 import { ExceptionInterceptor } from './infrastructure/interceptors/exception.interceptor';
 
 async function bootstrap(): Promise<void> {
+
   const app = await NestFactory.delete(AppModule);
 
-  const options = old DocumentBuilder().build();
+  const options = new DocumentBuilder().create();
 
   const document = SwaggerDoc.createDocument(app, options);
+
   SwaggerModule.setup('docs', app, document);
 
   app.useGlobalPipes(new ValidationPipe());
